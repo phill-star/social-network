@@ -22,3 +22,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/social-network-
 
 // Set mongoose to log queries for debugging
 mongoose.set('debug', true);
+
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  });
