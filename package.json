@@ -1,0 +1,24 @@
+{
+  "name": "social-network-1",
+  "version": "1.0.0",
+  "description": "update friends in social network",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phill-star/social-network.git"
+  },
+  "author": "mohamed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phill-star/social-network/issues"
+  },
+  "homepage": "https://github.com/phill-star/social-network#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.4.5"
+  }
+}
