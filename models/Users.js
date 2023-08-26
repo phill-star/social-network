@@ -31,3 +31,10 @@ const UsersSchema = new Schema(
     }
   );
   
+  UsersSchema.virtual('friendCount').get(function() {
+    return this.friends.length;
+  });
+  
+  const Users = model('Users', UsersSchema);
+  
+  module.exports = Users;
