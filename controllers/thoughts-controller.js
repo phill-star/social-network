@@ -94,4 +94,22 @@ const thoughtsController = {
         res.json(dbThoughtsData);
       })
       .catch(err => res.status(400).json(err));
-  }};
+  },
+  deleteReaction({ params }, res) {
+    Thoughts.findOneAndUpdate(
+      { _id: params.thoughtId },
+      { $pull: { reactions: { reactionId: params.reactionId } } },
+      { new: true }
+    )
+      .then(dbThoughtsData => {
+        if (!dbThoughtsData) {
+          res.status(404).json({ message: 'No thoughts with this particular ID!' });
+          return;
+        }
+        res.json(dbThoughtsData);
+      })
+      .catch(err => res.status(400).json(err));
+  },
+};
+
+module.exports = thoughtsController;
